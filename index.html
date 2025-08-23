@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fikri El Fakir - Full-Stack Web Developer</title>
+    <meta name="description" content="Passionate Full-Stack Web Developer with extensive experience in React, Node.js, and modern web technologies. Based in Al Hoceima, Morocco.">
+    <meta name="keywords" content="Full-Stack Developer, Web Developer, React, Node.js, JavaScript, TypeScript, Morocco">
+    <meta name="author" content="Fikri El Fakir">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Fikri El Fakir - Full-Stack Web Developer">
+    <meta property="og:description" content="Passionate Full-Stack Web Developer with extensive experience in React, Node.js, and modern web technologies.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://fikrielfakir.github.io/">
+    <meta property="og:image" content="./assets/images/profile.png">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Fikri El Fakir - Full-Stack Web Developer">
+    <meta name="twitter:description" content="Passionate Full-Stack Web Developer with extensive experience in React, Node.js, and modern web technologies.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+<body>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <button id="lang-toggle" class="lang-button">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129"></path>
+            </svg>
+            <span id="current-lang">English</span>
+        </button>
+        <div id="lang-dropdown" class="lang-dropdown hidden">
+            <button data-lang="en">English</button>
+            <button data-lang="fr">Français</button>
+            <button data-lang="es">Español</button>
+            <button data-lang="de">Deutsch</button>
+            <button data-lang="ar">العربية</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-grid">
+            <!-- Left Content -->
+            <div class="hero-content">
+                <!-- Animated Background Shapes -->
+                <div class="hero-bg-shapes">
+                    <div class="bg-shape-1"></div>
+                    <div class="bg-shape-2"></div>
+                    <div class="bg-shape-3"></div>
+                    <div class="bg-shape-4"></div>
+                </div>
+                
+                <div class="hero-text">
+                    <div class="hero-intro animate-fade-in">
+                        <h1 class="hero-name" data-i18n="hero.name">Fikri El Fakir</h1>
+                        <p class="hero-title" data-i18n="hero.title">Full-Stack Web Developer</p>
+                        <div class="hero-location">
+                            <svg class="location-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            <span data-i18n="hero.location">Al Hoceima, Morocco</span>
+                        </div>
+                    </div>
+
+                    <div class="hero-description animate-fade-in" style="animation-delay: 0.2s;">
+                        <p data-i18n="hero.description">Passionate and results-driven Full-Stack Web Developer with extensive experience in developing high-quality, scalable applications. Specializing in React, Node.js, and modern web technologies to drive digital transformation.</p>
+                    </div>
+
+                    <div class="hero-actions animate-fade-in" style="animation-delay: 0.4s;">
+                        <a href="mailto:elfakirfikri@gmail.com" class="btn-primary">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            <span data-i18n="hero.getInTouch">Get In Touch</span>
+                        </a>
+                        
+                        <div class="social-buttons">
+                            <a href="https://github.com/fikrielfakir" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                <span data-i18n="hero.viewGithub">View GitHub</span>
+                            </a>
+                            
+                            <a href="https://www.linkedin.com/in/elfakirfikri" target="_blank" rel="noopener noreferrer" class="btn-outline">
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                <span data-i18n="hero.linkedin">LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hero-contact-card animate-scale-in" style="animation-delay: 0.6s;">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <span>+212 696 126 701</span>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <span>elfakirfikri@gmail.com</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Background Image -->
+            <div class="hero-image">
+                <div class="hero-image-bg" style="background-image: url('./assets/images/profile.png')"></div>
+                <div class="hero-image-overlay"></div>
+                <div class="hero-image-gradient"></div>
+                <div class="hero-image-accent"></div>
+                
+                <!-- Right side shapes -->
+                <div class="hero-image-shapes">
+                    <div class="bg-shape-right-1"></div>
+                    <div class="bg-shape-right-2"></div>
+                    <div class="bg-shape-right-3"></div>
+                    <div class="bg-shape-right-4"></div>
+                </div>
+            </div>
+            
+            <!-- Mobile background -->
+            <div class="hero-mobile-bg" style="background-image: url('./assets/images/profile.png')">
+                <div class="hero-mobile-overlay"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="experience.title">Professional Experience</h2>
+                <p class="section-subtitle" data-i18n="experience.subtitle">Building innovative solutions and driving digital transformation across diverse industries</p>
+            </div>
+
+            <div class="experience-list">
+                <div class="experience-card animate-fade-in">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-position">Full-stack web developer</h3>
+                                <h4 class="experience-company">CERAMICA DARSA</h4>
+                            </div>
+                            <div class="experience-meta">
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>Aug. 2024 - Present</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Tetouan</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="experience-description">Led the development of a Human Resource Management System (HRMS) to automate leave, attendance, payroll, and employee performance evaluations. Improved operational efficiency and ensured data security compliance with local regulations.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Node.js</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">TypeScript</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-position">Full-stack web developer</h3>
+                                <h4 class="experience-company">BIMOC</h4>
+                            </div>
+                            <div class="experience-meta">
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>Apr. 2022 - Feb. 2023</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Tangier</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="experience-description">Development of a real-time monitoring platform to check the status of various websites and services. Implementation of React.js for the frontend and Python for creating robots for status checking.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">React.js</span>
+                            <span class="tech-badge">Python</span>
+                            <span class="tech-badge">Real-time Systems</span>
+                            <span class="tech-badge">Monitoring</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="experience-card animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="experience-content">
+                        <div class="experience-header">
+                            <div>
+                                <h3 class="experience-position">Full-stack web developer</h3>
+                                <h4 class="experience-company">BRANDISLY</h4>
+                            </div>
+                            <div class="experience-meta">
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                        <line x1="16" y1="2" x2="16" y2="6"></line>
+                                        <line x1="8" y1="2" x2="8" y2="6"></line>
+                                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                                    </svg>
+                                    <span>March 2019 - Nov. 2022</span>
+                                </div>
+                                <div class="meta-item">
+                                    <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                    </svg>
+                                    <span>Al Hoceima</span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="experience-description">Development of high-quality frontend and backend applications with modern web technologies. Built scalable applications focusing on performance and user experience.</p>
+                        <div class="tech-badges">
+                            <span class="tech-badge">HTML5</span>
+                            <span class="tech-badge">CSS</span>
+                            <span class="tech-badge">Angular</span>
+                            <span class="tech-badge">JavaScript</span>
+                            <span class="tech-badge">TypeScript</span>
+                            <span class="tech-badge">React</span>
+                            <span class="tech-badge">Redis</span>
+                            <span class="tech-badge">PostgreSQL</span>
+                            <span class="tech-badge">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="projects.title">Featured Projects</h2>
+                <p class="section-subtitle" data-i18n="projects.subtitle">Showcasing innovative web solutions that solve real-world problems</p>
+                
+                <div class="carousel-controls">
+                    <button id="prev-btn" class="carousel-btn" disabled>
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <polyline points="15,18 9,12 15,6"></polyline>
+                        </svg>
+                    </button>
+                    <span id="carousel-counter" class="carousel-counter">1 / 6</span>
+                    <button id="next-btn" class="carousel-btn">
+                        <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <polyline points="9,18 15,12 9,6"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="projects-carousel">
+                <div class="projects-container" id="projects-container">
+                    <!-- Projects will be dynamically inserted here -->
+                </div>
+            </div>
+
+            <!-- Carousel dots -->
+            <div class="carousel-dots" id="carousel-dots">
+                <!-- Dots will be dynamically inserted here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="skills.title">Skills & Expertise</h2>
+                <p class="section-subtitle" data-i18n="skills.subtitle">Comprehensive technical skills across the full development stack</p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-category animate-fade-in">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="m3,12a9,9 0 0 0 9,9c2.39,0 4.68,-0.94 6.38,-2.62L21,21.38A9,9 0 0 0 12,3c-2.39,0 -4.68,0.94 -6.38,2.62L3,2.62"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Frontend Development</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">React</span>
+                        <span class="skill-badge">Angular</span>
+                        <span class="skill-badge">Vue.js</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                        <span class="skill-badge">Tailwind CSS</span>
+                        <span class="skill-badge">Responsive Design</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-fade-in" style="animation-delay: 0.1s;">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Backend Development</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Node.js</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">Django</span>
+                        <span class="skill-badge">Express.js</span>
+                        <span class="skill-badge">REST APIs</span>
+                        <span class="skill-badge">GraphQL</span>
+                        <span class="skill-badge">Microservices</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-fade-in" style="animation-delay: 0.2s;">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                                <path d="m3 5v14c0 3 4 6 9 6s9-3 9-6V5"></path>
+                                <path d="m3 12c0 3 4 6 9 6s9-3 9-6"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Database & Storage</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">PostgreSQL</span>
+                        <span class="skill-badge">MySQL</span>
+                        <span class="skill-badge">MongoDB</span>
+                        <span class="skill-badge">Redis</span>
+                        <span class="skill-badge">Database Design</span>
+                        <span class="skill-badge">Query Optimization</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-fade-in" style="animation-delay: 0.3s;">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="16,18 22,12 16,6"></polyline>
+                                <polyline points="8,6 2,12 8,18"></polyline>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Programming Languages</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">JavaScript</span>
+                        <span class="skill-badge">TypeScript</span>
+                        <span class="skill-badge">Python</span>
+                        <span class="skill-badge">Java</span>
+                        <span class="skill-badge">C++</span>
+                        <span class="skill-badge">HTML5</span>
+                        <span class="skill-badge">CSS3</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-fade-in" style="animation-delay: 0.4s;">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                <line x1="8" y1="21" x2="16" y2="21"></line>
+                                <line x1="12" y1="17" x2="12" y2="21"></line>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Mobile Development</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">React Native</span>
+                        <span class="skill-badge">Progressive Web Apps</span>
+                        <span class="skill-badge">Mobile-First Design</span>
+                        <span class="skill-badge">Cross-Platform</span>
+                    </div>
+                </div>
+
+                <div class="skill-category animate-fade-in" style="animation-delay: 0.5s;">
+                    <div class="skill-header">
+                        <div class="skill-icon">
+                            <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="skill-title">Tools & DevOps</h3>
+                    </div>
+                    <div class="skill-badges">
+                        <span class="skill-badge">Git</span>
+                        <span class="skill-badge">Docker</span>
+                        <span class="skill-badge">CI/CD</span>
+                        <span class="skill-badge">AWS</span>
+                        <span class="skill-badge">Linux</span>
+                        <span class="skill-badge">Agile</span>
+                        <span class="skill-badge">Testing</span>
+                        <span class="skill-badge">Debugging</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Languages Card -->
+            <div class="languages-card animate-fade-in" style="animation-delay: 0.6s;">
+                <h3 class="languages-title">Languages</h3>
+                <div class="languages-grid">
+                    <div class="language-item">
+                        <h4>Arabic</h4>
+                        <span class="language-level">Native</span>
+                    </div>
+                    <div class="language-item">
+                        <h4>English</h4>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <h4>German</h4>
+                        <span class="language-level">Intermediate</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section class="section bg-secondary">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="education.title">Education & Certifications</h2>
+                <p class="section-subtitle" data-i18n="education.subtitle">Academic foundation and continuous learning in technology</p>
+            </div>
+
+            <div class="education-section">
+                <h3 class="subsection-title">
+                    <svg class="subsection-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path d="m22 10-6-3-6 3-6-3v10l6 3 6-3 6 3z"></path>
+                        <path d="m2 13 6 3 6-3 6 3"></path>
+                        <path d="M2 7l20 0"></path>
+                    </svg>
+                    Academic Background
+                </h3>
+                
+                <div class="education-list">
+                    <div class="education-card animate-fade-in">
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div>
+                                    <h4 class="education-degree">University Diploma in Science and Technology</h4>
+                                    <h5 class="education-institution">FACULTY OF SCIENCES AND TECHNOLOGY</h5>
+                                </div>
+                                <div class="education-meta">
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        <span>2021</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <span>Al Hoceima</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="education-description">Comprehensive education covering Physics, Chemistry, Biology, Mechanics, Electronics, Computer Science, and Mathematical Methods.</p>
+                            <div class="subject-badges">
+                                <span class="subject-badge">Physics</span>
+                                <span class="subject-badge">Chemistry</span>
+                                <span class="subject-badge">Biology</span>
+                                <span class="subject-badge">Mechanics</span>
+                                <span class="subject-badge">Electronics</span>
+                                <span class="subject-badge">Computer Science</span>
+                                <span class="subject-badge">Mathematics</span>
+                                <span class="subject-badge">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div>
+                                    <h4 class="education-degree">Final Project - University Timetable Planning</h4>
+                                    <h5 class="education-institution">FACULTY OF SCIENCES AND TECHNOLOGY</h5>
+                                </div>
+                                <div class="education-meta">
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        <span>2022</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <span>Al Hoceima</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="education-description">Focused on solving the complex problem of university timetable planning using advanced algorithms and optimization techniques.</p>
+                            <div class="subject-badges">
+                                <span class="subject-badge">Algorithm Design</span>
+                                <span class="subject-badge">Optimization</span>
+                                <span class="subject-badge">Problem Solving</span>
+                                <span class="subject-badge">Project Management</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-card animate-fade-in" style="animation-delay: 0.4s;">
+                        <div class="education-content">
+                            <div class="education-header">
+                                <div>
+                                    <h4 class="education-degree">Bachelor of Science in Physics</h4>
+                                    <h5 class="education-institution">ALKHAWARZMI SECONDARY SCHOOL</h5>
+                                </div>
+                                <div class="education-meta">
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                            <line x1="16" y1="2" x2="16" y2="6"></line>
+                                            <line x1="8" y1="2" x2="8" y2="6"></line>
+                                            <line x1="3" y1="10" x2="21" y2="10"></line>
+                                        </svg>
+                                        <span>2017</span>
+                                    </div>
+                                    <div class="meta-item">
+                                        <svg class="meta-icon" width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                        <span>Al Hoceima</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <p class="education-description">Thorough education in the fundamentals and advanced concepts of physics, providing strong analytical and mathematical foundation.</p>
+                            <div class="subject-badges">
+                                <span class="subject-badge">Advanced Physics</span>
+                                <span class="subject-badge">Mathematics</span>
+                                <span class="subject-badge">Scientific Method</span>
+                                <span class="subject-badge">Research</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications -->
+            <div class="certifications-section">
+                <h3 class="subsection-title">
+                    <svg class="subsection-icon" width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <circle cx="12" cy="8" r="7"></circle>
+                        <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                    </svg>
+                    Professional Certifications
+                </h3>
+                
+                <div class="certifications-grid">
+                    <div class="certification-card animate-fade-in">
+                        <div class="certification-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h4 class="certification-title">Front End Development Libraries</h4>
+                        <p class="certification-issuer">Freecodecamp</p>
+                        <span class="certification-year">2024</span>
+                    </div>
+
+                    <div class="certification-card animate-fade-in" style="animation-delay: 0.1s;">
+                        <div class="certification-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h4 class="certification-title">Google Tag Manager Basics</h4>
+                        <p class="certification-issuer">Google Analytics Academy</p>
+                        <span class="certification-year">2024</span>
+                    </div>
+
+                    <div class="certification-card animate-fade-in" style="animation-delay: 0.2s;">
+                        <div class="certification-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="8" r="7"></circle>
+                                <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88"></polyline>
+                            </svg>
+                        </div>
+                        <h4 class="certification-title">Google Analytics for Beginners</h4>
+                        <p class="certification-issuer">Google Analytics Academy</p>
+                        <span class="certification-year">2024</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="contact.title">Get In Touch</h2>
+                <p class="section-subtitle" data-i18n="contact.subtitle">Let's collaborate on your next project or discuss exciting opportunities</p>
+            </div>
+
+            <div class="contact-grid">
+                <!-- Contact Information -->
+                <div class="contact-card animate-fade-in">
+                    <h3 class="contact-card-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span data-i18n="contact.information">Contact Information</span>
+                    </h3>
+                    
+                    <div class="contact-info-list">
+                        <a href="mailto:elfakirfikri@gmail.com" class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Email</h4>
+                                <span>elfakirfikri@gmail.com</span>
+                            </div>
+                        </a>
+
+                        <a href="tel:+212696126701" class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Phone</h4>
+                                <span>+212 696 126 701</span>
+                            </div>
+                        </a>
+
+                        <a href="https://maps.google.com/?q=Al+Hoceima,Morocco" target="_blank" rel="noopener noreferrer" class="contact-info-item">
+                            <div class="contact-info-icon">
+                                <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4>Location</h4>
+                                <span>Al Hoceima, Morocco</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <div class="social-links">
+                        <h4 data-i18n="contact.connectWithMe">Connect with me</h4>
+                        <div class="social-buttons-group">
+                            <a href="https://github.com/fikrielfakir" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                                </svg>
+                                GitHub
+                            </a>
+                            <a href="https://www.linkedin.com/in/elfakirfikri" target="_blank" rel="noopener noreferrer" class="social-btn">
+                                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Call to Action -->
+                <div class="cta-card animate-fade-in" style="animation-delay: 0.2s;">
+                    <h3 class="cta-title">
+                        <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                        </svg>
+                        <span data-i18n="contact.workTogether">Let's Work Together</span>
+                    </h3>
+                    
+                    <p class="cta-description" data-i18n="contact.workDescription">I'm always excited to work on innovative projects and collaborate with talented individuals. Whether you have a project in mind, need technical consultation, or just want to connect, I'd love to hear from you.</p>
+
+                    <div class="cta-services">
+                        <h4 data-i18n="contact.canHelpWith">What I can help with:</h4>
+                        <div class="service-badges">
+                            <span class="service-badge">Full-Stack Development</span>
+                            <span class="service-badge">System Architecture</span>
+                            <span class="service-badge">Technical Consulting</span>
+                            <span class="service-badge">Code Review</span>
+                            <span class="service-badge">Mentoring</span>
+                        </div>
+                    </div>
+
+                    <a href="mailto:elfakirfikri@gmail.com" class="cta-button">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 7.89a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                        <span data-i18n="contact.sendEmail">Send me an Email</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Interests & Hobbies -->
+            <div class="interests-card animate-fade-in" style="animation-delay: 0.4s;">
+                <h3 class="interests-title" data-i18n="contact.interests">Beyond Code - Interests & Hobbies</h3>
+                <div class="interests-grid">
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <polyline points="16,18 22,12 16,6"></polyline>
+                                <polyline points="8,6 2,12 8,18"></polyline>
+                            </svg>
+                        </div>
+                        <h4>Tech Enthusiast</h4>
+                        <p>Open-source contributor</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <line x1="2" y1="12" x2="22" y2="12"></line>
+                                <path d="m3,12a9,9 0 0 0 9,9c2.39,0 4.68,-0.94 6.38,-2.62L21,21.38A9,9 0 0 0 12,3c-2.39,0 -4.68,0.94 -6.38,2.62L3,2.62"></path>
+                            </svg>
+                        </div>
+                        <h4>Travel</h4>
+                        <p>Exploring cultures & languages</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                                <circle cx="9" cy="7" r="4"></circle>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                            </svg>
+                        </div>
+                        <h4>Volunteering</h4>
+                        <p>Coding workshops for youth</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                        <h4>Photography</h4>
+                        <p>Landscape photography</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="2"></circle>
+                                <path d="M16.24 7.76a6 6 0 0 1 0 8.49m-8.48-.01a6 6 0 0 1 0-8.49M20.07 16.93a10 10 0 0 1 0-9.86M3.93 6.93a10 10 0 0 1 0 9.86"></path>
+                            </svg>
+                        </div>
+                        <h4>Cycling</h4>
+                        <p>Long-distance cycling</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.29 1.51 4.04 3 5.5Z"></path>
+                                <path d="M12 5L8 21l4-7 4 7-4-16"></path>
+                            </svg>
+                        </div>
+                        <h4>Cooking</h4>
+                        <p>International cuisines</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                            </svg>
+                        </div>
+                        <h4>Reading</h4>
+                        <p>Tech blogs & non-fiction</p>
+                    </div>
+
+                    <div class="interest-item">
+                        <div class="interest-icon">
+                            <svg width="24" height="24" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path d="M9 18V5l12-2v13"></path>
+                                <circle cx="6" cy="18" r="3"></circle>
+                                <circle cx="18" cy="16" r="3"></circle>
+                            </svg>
+                        </div>
+                        <h4>Music</h4>
+                        <p>Guitar & various genres</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">
+                © 2024 Fikri El Fakir. <span data-i18n="contact.footer">Built with ❤️ using React & TypeScript</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Custom JavaScript -->
+    <script src="./assets/js/script.js"></script>
+</body>
+</html>
